@@ -26,17 +26,17 @@ inventoryCtrl.deleteInventory =async(req,res)=> {
 inventoryCtrl.findBrewery =async(req,res)=> {
     const { Name,Brewery,Style,Description } = req.body;
     const brewery = await Inventory.find({Brewery: Brewery});
-    res.json(brewery);
+    res(brewery);
 }
 inventoryCtrl.findBeer =async(req,res)=> {
     const { Name,Brewery,Style,Description } = req.body;
     const beer = await Inventory.find({Name: Name});
-    res.json(beer);
+    res(beer);
 }
 inventoryCtrl.findStyle =async(req,res)=> {
     const { Name,Brewery,Style,Description } = req.body;
     const style = await Inventory.find({Style: Style});
-    res.json(style);
+    res(style);
 }
 
 module.exports = inventoryCtrl;
